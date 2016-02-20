@@ -4,26 +4,26 @@ package models;
  * Created by Baizhong Zhang on 2016/2/20.
  */
 public class LetterMail {
-    public int width,depth,height,weight;
+    public double width,depth,height,weight;
     public String destination;
 
     public LetterMail(){
 
     }
 
-    public int getWidth(){
+    public double getWidth(){
         return width;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public int getDepth() {
+    public double getDepth() {
         return depth;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -32,7 +32,6 @@ public class LetterMail {
     }
 
     public void setDestination(String destination) {
-
         this.destination = destination;
     }
 
@@ -49,7 +48,13 @@ public class LetterMail {
     }
 
     public String getDestination() {
-        return destination;
+        if(destination.isEmpty()){
+            return "Please select your destination";
+        }
+        else {
+            return destination;
+        }
     }
+
 
 }

@@ -4,35 +4,39 @@ package models;
  * Created by Baizhong Zhang on 2016/2/20.
  */
 public class PostRateCalculator {
-    public int width, depth, height, weight;
-    public String destination;
+    public double width, depth, height, weight;
+    public double postRate;
 
-    public PostRateCalculator(int width, int depth, int height, int weight, String destination) {
-        this.width = width;
-        this.depth = depth;
-        this.height = height;
-        this.weight = weight;
-        this.destination = destination;
+    public PostRateCalculator() {
     }
 
-    public void calculatePostRate(){
+    public double calculatePostRateFromDest(String destination){
         if(destination.equalsIgnoreCase("canada")){
-            calculatePostRateCanada();
+            postRate = calculatePostRateCanada(width,depth, height, weight);
         }
         else if((destination.equalsIgnoreCase("usa"))||(destination.equalsIgnoreCase("United State"))){
-            calculatePostRateUSA();
+            postRate = calculatePostRateUSA();
         }
-        else{
-            calculatePostRateWorld();
+        else if(destination.equalsIgnoreCase("international")){
+            postRate = calculatePostRateWorld();
         }
+        else{// if destination is empty
+            invalidInput();
+        }
+        return postRate;
     }
-    public int calculatePostRateCanada(){
+    public String invalidInput(){
+        return "Please select your destination";
+    }
+    public double calculatePostRateCanada(double width, double depth, double height, double weight){
+
         return 0;
     }
-    public int calculatePostRateUSA(){
+    public double calculatePostRateUSA(){
         return 0;
     }
-    public int calculatePostRateWorld(){
+    public double calculatePostRateWorld(){
         return 0;
     }
+
 }
