@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PostalRateCalculator</string>
+
+    <string-array name="destination_array">
+        <item>CANADA</item>
+        <item>USA</item>
+        <item>OTHER</item>
+    </string-array>
+
 </resources>
