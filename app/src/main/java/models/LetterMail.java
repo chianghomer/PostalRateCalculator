@@ -7,12 +7,8 @@ public class LetterMail {
     public int width,depth,height,weight;
     public String destination;
 
-    public LetterMail(int width, int depth, int height, int weight, String destination){
-        this.width = width;
-        this.depth = depth;
-        this.height = height;
-        this.weight = weight;
-        this.destination = destination;
+    public LetterMail(){
+
     }
 
     public int getWidth(){
@@ -30,6 +26,7 @@ public class LetterMail {
     public int getWeight() {
         return weight;
     }
+
     public void setDepth(int depth) {
         this.depth = depth;
     }
