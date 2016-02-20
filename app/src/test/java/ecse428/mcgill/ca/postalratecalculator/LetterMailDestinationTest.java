@@ -1,5 +1,6 @@
 package ecse428.mcgill.ca.postalratecalculator;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,6 +21,12 @@ public class LetterMailDestinationTest {
         System.out.println("Initialize Letter Mail");
     }
 
+    @After
+    public void tearDown() {
+        letterMail = null;
+    }
+
+
     @Test
     public void TestSetDestinationNormal(){
         letterMail.setDestination("Canada");
@@ -33,5 +40,7 @@ public class LetterMailDestinationTest {
 
         assertEquals("",letterMail.getDestination());
     }
+
+
 
 }

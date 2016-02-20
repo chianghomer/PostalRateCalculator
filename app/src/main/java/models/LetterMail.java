@@ -32,6 +32,7 @@ public class LetterMail {
     }
 
     public void setDestination(String destination) {
+
         this.destination = destination;
     }
 
