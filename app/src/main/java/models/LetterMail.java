@@ -27,7 +27,7 @@ public class LetterMail {
         return weight;
     }
 
-    public void setDepth(int depth) {
+    public void setDepth(double depth) {
         this.depth = depth;
     }
 
@@ -35,15 +35,15 @@ public class LetterMail {
         this.destination = destination;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 
