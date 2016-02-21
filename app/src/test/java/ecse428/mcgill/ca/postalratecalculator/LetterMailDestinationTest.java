@@ -213,6 +213,45 @@ public class LetterMailDestinationTest {
         PostRateCalculator pr = new PostRateCalculator(letterMail.getWidth(), letterMail.getDepth(), letterMail.getHeight(),letterMail.getWeight());
         double calculatedRate = pr.calculatePostRateFromDest(letterMail.getDestination());
         assert calculatedRate == 20.60:"test is failed or unavailable to check whether international mail letter is oversize or not";
-        System.out.println("Test case has validated the functionality for calculate the post rate of the international oversize mail letter");
+        //System.out.println("Test case has validated the functionality for calculate the post rate of the international oversize mail letter");
+    }
+    @Test
+    //19 test for invalid weight( weight larger than 500g) for mail letter within Canada
+    public void TestInvalidWeightInputForCanadaMailLetter(){
+        letterMail.setWeight(600);
+        letterMail.setWidth(300);
+        letterMail.setDepth(200);
+        letterMail.setHeight(15);
+        letterMail.setDestination("canada");
+        PostRateCalculator pr = new PostRateCalculator(letterMail.getWidth(), letterMail.getDepth(), letterMail.getHeight(),letterMail.getWeight());
+        double calculatedRate = pr.calculatePostRateFromDest(letterMail.getDestination());
+        assert calculatedRate == -1.0:"test fail to check whether the weight exceed the maximum weight requirement";
+        //System.out.println("successful to check whether the weight meet the maximum width requirement");
+    }
+    @Test
+    //20 test for invalid weight( weight larger than 500g) for mail letter to USA
+    public void TestInvalidWeightInputForUSAMailLetter(){
+        letterMail.setWeight(600);
+        letterMail.setWidth(300);
+        letterMail.setDepth(200);
+        letterMail.setHeight(15);
+        letterMail.setDestination("USA");
+        PostRateCalculator pr = new PostRateCalculator(letterMail.getWidth(), letterMail.getDepth(), letterMail.getHeight(),letterMail.getWeight());
+        double calculatedRate = pr.calculatePostRateFromDest(letterMail.getDestination());
+        assert calculatedRate == -1.0:"test fail to check whether the weight exceed the maximum weight requirement";
+        System.out.println("successful to check whether the weight meet the maximum width requirement");
+    }
+    @Test
+    //21 test for invalid weight( weight larger than 500g) for mail letter to international
+    public void TestInvalidWeightInputForInternationalMailLetter(){
+        letterMail.setWeight(600);
+        letterMail.setWidth(300);
+        letterMail.setDepth(200);
+        letterMail.setHeight(15);
+        letterMail.setDestination("international");
+        PostRateCalculator pr = new PostRateCalculator(letterMail.getWidth(), letterMail.getDepth(), letterMail.getHeight(),letterMail.getWeight());
+        double calculatedRate = pr.calculatePostRateFromDest(letterMail.getDestination());
+        assert calculatedRate == -1.0:"test fail to check whether the weight exceed the maximum weight requirement";
+        System.out.println("successful to check whether the weight meet the maximum width requirement");
     }
 }

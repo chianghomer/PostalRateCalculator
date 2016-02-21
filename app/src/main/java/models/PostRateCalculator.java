@@ -35,7 +35,7 @@ public class PostRateCalculator {
     public double calculatePostRateCanada(double width, double depth, double height, double weight){
 
         double rate = 0.0;
-        if((width <= 140.0)||(depth <= 90.0)||(height <= 0.18)||(width >= 380.0)||(depth >= 270.0)||(height >= 20)){
+        if((width < 140.0)||(depth < 90.0)||(height < 0.18)||(width > 380.0)||(depth > 270.0)||(height > 20)||(weight > 500)){
             rate = -1;
         }
         else{
@@ -70,7 +70,7 @@ public class PostRateCalculator {
     }
     public double calculatePostRateUSA(){
         double rate = 0.0;
-        if((width <= 140.0)||(depth <= 90.0)||(height <= 0.18)||(width >= 380.0)||(depth >= 270.0)||(height >= 20)){
+        if((width < 140.0)||(depth < 90.0)||(height < 0.18)||(width > 380.0)||(depth > 270.0)||(height > 20)||(weight > 500)){
             rate = -1;
         }
         else{
@@ -98,7 +98,7 @@ public class PostRateCalculator {
     }
     public double calculatePostRateWorld(){
         double rate = 0.0;
-        if((width <= 140.0)||(depth <= 90.0)||(height <= 0.18)||(width >= 380.0)||(depth >= 270.0)||(height >= 20)){
+        if((width < 140.0)||(depth < 90.0)||(height < 0.18)||(width > 380.0)||(depth > 270.0)||(height > 20)||(weight > 500)){
             rate = -1;
         }
         else {
